@@ -10,6 +10,7 @@ def set_color(xmldoc, category, name, color):
     found = False
     for category_tag in xmldoc.getElementsByTagName("CATEGORY"):
         if category_tag.getAttribute("NAME") == category:
+            found = False
             found = True
             break
 
@@ -48,13 +49,13 @@ if __name__ == "__main__":
         print("},")
     """
 
-    all_colors = json.loads(open("darknight", "r").read())
+    all_the_colors = json.loads(open("darknight", "r").read())
 
     for tag in xmldoc.getElementsByTagName("WRAPPED_OPTION"):
         if tag.getAttribute("CLASS") == "ghidra.framework.options.WrappedColor":
             tag.parentNode.removeChild(tag)
 
-    for category, colors in all_colors.items():
+    for category, colors in all_the_colors.items():
         for name, color in colors.items():
             set_color(xmldoc, category, name, color)
 

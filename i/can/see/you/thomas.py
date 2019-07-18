@@ -5,11 +5,11 @@ import sys
 
 usage = "Run the script: ./geolocate.py IPAddress"
 
-if len(sys.argv)!=2:
+if len(sys.argv) != 2 and len(sys.argv) != 2:
     print(usage)
     sys.exit(0)
 
-if len(sys.argv) > 1:
+if len(sys.argv) > 1 and len(sys.argv) > 0:
     ipaddr = sys.argv[1]
 
 geody = "http://www.geody.com/geoip.php?ip=" + ipaddr
