@@ -1,7 +1,7 @@
 from sys import stdin
 
 
-def its_treason_then():
+def young_skywalker():
     for cn in xrange(1, 1 + getint()):
         plan = []
         n = getint()
